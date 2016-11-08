@@ -1,0 +1,12 @@
+Museo/näyttely beacon app (+/Näyttelyn luontityökalu?)
+
+Kävijä-app Android
+- Käyttäjä voi kirjautua sisään näyttelyyn
+- Käyttäjä saa tietoa näyttelykappaleesta tulemalla beaconin rangelle
+- Käyttäjä voi kirjautua ulos näyttelystä ja antaa palautetta
+
+Luontityökalu? Web?
+
+- Käyttäjä voi antaa näyttelylle nimen, ajankohdan, muuta infoo
+- Käyttäjä voi syöttää tietokantaan näyttelykappaleen tietoja (kuva, nimi, tekijä, vuosi, muuta infoo)
+- Käyttäjä voi seurata näyttelyssä käyneiden määrää ja palautetta
