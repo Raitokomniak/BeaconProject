@@ -32,7 +32,6 @@ public class BeaconNotificationsManager implements DataGet.OnRequestDoneInterfac
     private List<Region> regionsToMonitor = new ArrayList<>();
     private HashMap<String, String> enterMessages = new HashMap<>();
     private HashMap<String, String> exitMessages = new HashMap<>();
-    ArrayList<ArrayList<String>> fullItemData = new ArrayList<ArrayList<String>>();
 
 
     private Context context;
@@ -53,16 +52,17 @@ public class BeaconNotificationsManager implements DataGet.OnRequestDoneInterfac
             @Override
             public void onEnteredRegion(Region region, List<Beacon> list) {
                 Log.i(TAG, "onEnteredRegion: " + region.getIdentifier());
+                String beaconRegion = region.getIdentifier();
                 String message = enterMessages.get(region.getIdentifier());
                 if (message != null) {
                     //showNotification(message);
                 }
-                getBeaconData();
+                getBeaconData(beaconRegion);
             }
 
             @Override
             public void onExitedRegion(Region region) {
-                Log.d(TAG, "onExitedRegion: " + region.getIdentifier());
+                Log.i(TAG, "onExitedRegion: " + region.getIdentifier());
                 String message = exitMessages.get(region.getIdentifier());
                 if (message != null) {
                     //showNotification(message);
@@ -71,8 +71,8 @@ public class BeaconNotificationsManager implements DataGet.OnRequestDoneInterfac
         });
     }
 
-    public void getBeaconData() {
-        String url = "http://www.students.oamk.fi/~t4toan00/php/getBeacons.php";
+    public void getBeaconData(String region) {
+        String url = "http://www.students.oamk.fi/~t4toan00/php/getSpecificBeacon.php?id_beacon=" + region;
         DataGet getter = new DataGet(url, this);
         getter.start();
     }
@@ -119,12 +119,6 @@ public class BeaconNotificationsManager implements DataGet.OnRequestDoneInterfac
         {
             List<Object> parsed = JsonUtils.toList(new JSONArray(data));
             Map<String,Object> itemInfo = (Map)parsed.get(0);
-            /*for(int i= 0; i < parsed.size(); i++) {
-                itemInfo = (Map)parsed.get(i);
-                ArrayList<String> tempList = new ArrayList<String>();
-                Log.i(TAG, itemInfo.get("name").toString() + itemInfo.get("author").toString() + itemInfo.get("year").toString());
-            }*/
-
             appCallback.beaconDataAvailable(itemInfo);
         }
         catch (Exception e)

@@ -23,15 +23,10 @@ public class MyApplication extends Application implements BeaconNotificationsMan
         public void dataAvailable(Map<String,Object> itemInfo);
     }
 
-    public MyApplication() {
-
-    }
+    public MyApplication() { }
 
     ResponseListener uiCallback;
 
-    public MyApplication(ResponseListener callbackInterface) {
-        this.uiCallback = callbackInterface;
-    }
 
     public String getAvailableData() {
         return availableData;
@@ -55,8 +50,12 @@ public class MyApplication extends Application implements BeaconNotificationsMan
         BeaconNotificationsManager beaconNotificationsManager = new BeaconNotificationsManager(this,this);
         beaconNotificationsManager.addNotification(
                 new BeaconID("B9407F30-F5F8-466E-AFF9-25556B57FE6D", 30186, 49616),
-                "Hello, world.",
-                "Goodbye, world.");
+                "candy",
+                "uncandy");
+        beaconNotificationsManager.addNotification(
+                new BeaconID("B9407F30-F5F8-466E-AFF9-25556B57FE6D", 37180, 7903),
+                "PEKONA",
+                "UNPEKONA");
         beaconNotificationsManager.startMonitoring();
 
         beaconNotificationsEnabled = true;
@@ -70,7 +69,6 @@ public class MyApplication extends Application implements BeaconNotificationsMan
     public void beaconDataAvailable(Map<String,Object> itemInfo) {
         try
         {
-            //Log.i(TAG, "dataa ui:lle: " + data);
             uiCallback.dataAvailable(itemInfo);
         }
         catch (Exception e)
