@@ -48,6 +48,8 @@ public class BeaconNotificationsManager implements DataGet.OnRequestDoneInterfac
         this.context = context;
         this.appCallback = callbackInterface;
         beaconManager = new BeaconManager(context);
+        beaconManager.setRegionExitExpiration(10000);
+        beaconManager.setBackgroundScanPeriod(1000, 5000);
         beaconManager.setMonitoringListener(new BeaconManager.MonitoringListener() {
             @Override
             public void onEnteredRegion(Region region, List<Beacon> list) {
@@ -72,7 +74,7 @@ public class BeaconNotificationsManager implements DataGet.OnRequestDoneInterfac
     }
 
     public void getBeaconData(String region) {
-        String url = "http://www.students.oamk.fi/~t4toan00/php/getSpecificBeacon.php?id_beacon=" + region;
+        String url = "http://www.students.oamk.fi/~t4toan00/php/getSpecificBeacon.php?id_beacon='" + region + "'";
         DataGet getter = new DataGet(url, this);
         getter.start();
     }

@@ -16,7 +16,6 @@ import java.util.Map;
 public class MyApplication extends Application implements BeaconNotificationsManager.BeaconDataAvailableInterface{
 
     private boolean beaconNotificationsEnabled = false;
-    private String availableData = "";
     private static final String TAG = "MyApplication";
 
     public interface ResponseListener {
@@ -28,9 +27,6 @@ public class MyApplication extends Application implements BeaconNotificationsMan
     ResponseListener uiCallback;
 
 
-    public String getAvailableData() {
-        return availableData;
-    }
 
 
     @Override
@@ -41,7 +37,7 @@ public class MyApplication extends Application implements BeaconNotificationsMan
 
         // uncomment to enable debug-level logging
         // it's usually only a good idea when troubleshooting issues with the Estimote SDK
-//        EstimoteSDK.enableDebugLogging(true);
+        EstimoteSDK.enableDebugLogging(true);
     }
 
     public void enableBeaconNotifications(ResponseListener callbackInterface) {
