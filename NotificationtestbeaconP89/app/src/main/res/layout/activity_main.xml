@@ -10,70 +10,42 @@
     tools:context="com.T2Viat00StudentsOamkFi.NotificationtestbeaconP89.MainActivity">
 
     <TextView
-        android:text="-"
+        android:text="Nimi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="39dp"
         android:id="@+id/textName"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/textName2" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Name:"
-        android:id="@+id/textName2"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Author:"
-        android:id="@+id/textAuthor2"
-        android:layout_marginTop="22dp"
-        android:layout_below="@+id/textName2"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Year:"
-        android:id="@+id/textYear2"
-        android:layout_below="@+id/textAuthor2"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="22dp" />
+        android:textStyle="normal|bold" />
 
     <TextView
+        android:text="Tekijä"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Description:"
-        android:id="@+id/textDescription2"
-        android:layout_below="@+id/textYear2"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="22dp" />
-
-    <TextView
-        android:text="-"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
         android:id="@+id/textAuthor"
-        android:layout_below="@+id/textAuthor2"
-        android:layout_alignParentEnd="true" />
+        android:textStyle="normal|italic"
+        android:layout_below="@+id/textName"
+        android:layout_toEndOf="@+id/textDescription" />
 
     <TextView
-        android:text="-"
+        android:text="vuosi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textYear"
-        android:layout_below="@+id/textYear2"
-        android:layout_alignParentEnd="true" />
+        android:textStyle="normal|italic"
+        android:layout_alignBaseline="@+id/textAuthor"
+        android:layout_alignBottom="@+id/textAuthor"
+        android:layout_alignStart="@+id/textName" />
 
     <TextView
-        android:text="-"
+        android:text="Tietoa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
         android:id="@+id/textDescription"
-        android:layout_below="@+id/textDescription2"
-        android:layout_alignParentEnd="true" />
-
+        android:layout_below="@+id/textAuthor"
+        android:layout_alignStart="@+id/textYear" />
 </RelativeLayout>
