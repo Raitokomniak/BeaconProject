@@ -33,7 +33,6 @@ public class BeaconNotificationsManager implements DataGet.OnRequestDoneInterfac
     private HashMap<String, String> enterMessages = new HashMap<>();
     private HashMap<String, String> exitMessages = new HashMap<>();
 
-
     private Context context;
 
     private int notificationID = 0;
@@ -55,20 +54,12 @@ public class BeaconNotificationsManager implements DataGet.OnRequestDoneInterfac
             public void onEnteredRegion(Region region, List<Beacon> list) {
                 Log.i(TAG, "onEnteredRegion: " + region.getIdentifier());
                 String beaconRegion = region.getIdentifier();
-                String message = enterMessages.get(region.getIdentifier());
-                if (message != null) {
-                    //showNotification(message);
-                }
                 getBeaconData(beaconRegion);
             }
 
             @Override
             public void onExitedRegion(Region region) {
                 Log.i(TAG, "onExitedRegion: " + region.getIdentifier());
-                String message = exitMessages.get(region.getIdentifier());
-                if (message != null) {
-                    //showNotification(message);
-                }
             }
         });
     }

@@ -9,9 +9,7 @@ import com.estimote.sdk.EstimoteSDK;
 
 import java.util.Map;
 
-//
-// Running into any issues? Drop us an email to: contact@estimote.com
-//
+
 
 public class MyApplication extends Application implements BeaconNotificationsManager.BeaconDataAvailableInterface{
 
@@ -26,9 +24,6 @@ public class MyApplication extends Application implements BeaconNotificationsMan
 
     ResponseListener uiCallback;
 
-
-
-
     @Override
     public void onCreate() {
         super.onCreate();
@@ -37,7 +32,7 @@ public class MyApplication extends Application implements BeaconNotificationsMan
 
         // uncomment to enable debug-level logging
         // it's usually only a good idea when troubleshooting issues with the Estimote SDK
-        EstimoteSDK.enableDebugLogging(true);
+//        EstimoteSDK.enableDebugLogging(true);
     }
 
     public void enableBeaconNotifications(ResponseListener callbackInterface) {

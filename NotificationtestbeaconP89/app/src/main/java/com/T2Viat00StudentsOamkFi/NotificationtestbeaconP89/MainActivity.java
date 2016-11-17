@@ -7,6 +7,7 @@ import android.util.Log;
 import android.widget.TextView;
 
 import com.estimote.sdk.SystemRequirementsChecker;
+import com.bumptech.glide.Glide;
 
 import java.util.Map;
 
@@ -60,5 +61,9 @@ public class MainActivity extends AppCompatActivity implements MyApplication.Res
         textViewAuthor.setText(itemInfo.get("author").toString());
         textViewYear.setText(itemInfo.get("year").toString());
         textViewDescription.setText(itemInfo.get("description").toString());
+    }
+
+    public void loadImage(String imageURL) {
+
     }
 }
