@@ -47,6 +47,10 @@ public class MyApplication extends Application implements BeaconNotificationsMan
                 new BeaconID("B9407F30-F5F8-466E-AFF9-25556B57FE6D", 37180, 7903),
                 "PEKONA",
                 "UNPEKONA");
+        beaconNotificationsManager.addNotification(
+                new BeaconID("B9407F30-F5F8-466E-AFF9-25556B57FE6D", 61815, 29521),
+                "lemon",
+                "unlemon");
         beaconNotificationsManager.startMonitoring();
 
         beaconNotificationsEnabled = true;

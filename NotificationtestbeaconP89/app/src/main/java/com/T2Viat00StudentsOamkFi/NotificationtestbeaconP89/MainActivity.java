@@ -64,6 +64,6 @@ public class MainActivity extends AppCompatActivity implements MyApplication.Res
     }
 
     public void loadImage(String imageURL) {
-
+        //Maybe stuff here later
     }
 }
