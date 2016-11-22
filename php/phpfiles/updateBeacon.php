@@ -3,10 +3,8 @@
 
 $post_date = file_get_contents("php://input");
 $data = json_decode($post_date);
-
-
-//$connect = mysqli_connect("localhost", "admin", "root", "beaconapp");
-$connect = mysqli_connect("mysli.oamk.fi", "t4toan00", "3u4ctzSWUr8qUPJ6", "opisk_t4toan00");
+include 'connection.php';
+$connect = mysqli_connect($host, $user, $pass, $database);
 
 $query = "UPDATE `beacons` SET `name`='".$data->name."', `author`='".$data->author."', `year`='".$data->year."', `description`='".$data->description."', `image_url`='".$data->image_url."', `showroom`='".$data->showroom."' WHERE `id_beacon`='".$data->id_beacon."'; ";
 

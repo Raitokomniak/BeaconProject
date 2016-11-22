@@ -4,9 +4,8 @@
 $post_date = file_get_contents("php://input");
 $data = json_decode($post_date);
 
-
-//$connect = mysqli_connect("localhost", "admin", "root", "beaconapp");
-$connect = mysqli_connect("mysli.oamk.fi", "t4toan00", "3u4ctzSWUr8qUPJ6", "opisk_t4toan00");
+include 'connection.php';
+$connect = mysqli_connect($host, $user, $pass, $database);
 
 $query = "
 	  INSERT INTO `beacons` (`id_beacon`, `name`, `author`, `year`, `description`, `image_url`, `showroom`) 
@@ -19,7 +18,7 @@ $result = mysqli_query($connect, $query);
 while ($row = mysqli_fetch_array($result)) {
   $data[] = $row;
 }
-
+	
     //print ($data);
 
 ?>

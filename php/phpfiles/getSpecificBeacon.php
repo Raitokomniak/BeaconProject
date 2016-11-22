@@ -1,6 +1,6 @@
 <?php
-//$connect = mysqli_connect("localhost", "admin", "root", "beaconapp");
-$connect = mysqli_connect("mysli.oamk.fi", "t4toan00", "3u4ctzSWUr8qUPJ6", "opisk_t4toan00");
+include 'connection.php';
+$connect = mysqli_connect($host, $user, $pass, $database);
 
 $id_beacon = $_GET['id_beacon'];
 $query = "SELECT * FROM `beacons` WHERE id_beacon='".$id_beacon."';";
